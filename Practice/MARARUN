@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	int t;
+	cin >> t;
+	while(t--)
+	{
+	    int D,d,A,B,C;
+	    cin >> D >> d >> A >> B >> C;
+	    int cover = D*d;
+	    if(cover >= 10 && cover < 21)
+	    {
+	        cout << A;
+	    }
+	    else if(cover >= 21 && cover < 42)
+	    {
+	        cout << B;
+	    }
+	    else if(cover >= 42)
+	    {
+	        cout << C;
+	    }
+	    else
+	    {
+	        cout << "0";
+	    }
+	    cout << "\n";
+	}
+	
+	return 0;
+}
