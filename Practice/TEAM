@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	int t, problems = 0;
+	cin >> t;
+	while(t--)
+    {
+        int  petya, vasya, tonya;
+        cin >> petya >> vasya >> tonya;
+        if(petya == 1 && vasya == 1)
+            problems++;
+        else if(vasya == 1 && tonya == 1)
+            problems++;
+        else if(tonya == 1 && petya == 1)
+            problems++;
+    }
+    cout << problems;
+    return(0);
+}
