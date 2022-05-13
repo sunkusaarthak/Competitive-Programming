@@ -3,7 +3,8 @@ using namespace std;
 
 void sugarcal(int candy[], int cn);
 int main() {
-    
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int t;
     cin >> t;
     while(t--)
