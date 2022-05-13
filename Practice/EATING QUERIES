@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+void sugarcal(int candy[], int cn);
+int main() {
+    
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int cn, qn;
+        cin >> cn >> qn;
+        int candy[cn];
+        for(int i=0;i<cn;i++)
+        {
+            cin >> candy[i];
+        }
+        
+        for (int step = 1; step < cn; step++) 
+        {
+            int key = candy[step];
+            int j = step - 1;
+            while (key > candy[j] && j >= 0) 
+            {
+                candy[j + 1] = candy[j];
+                --j;
+            }
+            candy[j + 1] = key;
+        }
+        
+        while(qn--)
+        {
+            sugarcal(candy, cn);
+        }
+    }
+    
+    return 0;
+}
+
+void sugarcal(int candy[], int cn)
+{
+    int res=0;
+    int sg;
+    cin >> sg;
+    if(sg <= candy[0])
+    {
+        cout << "1";
+        cout << "\n";
+        return;  
+    }
+    for(int i=0;i<cn;i++)
+    {
+        res += candy[i];
+        if(sg <= res)
+        {
+            cout << i+1;
+            cout << "\n";
+            return;
+        }
+    }
+    
+    cout << "-1\n";
+}
