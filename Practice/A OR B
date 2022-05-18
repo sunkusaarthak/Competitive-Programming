@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int a, b;
+        cin >> a >> b;
+        int as, bs;
+        as = 1000 - b*4;
+        bs = 500 - (a+b)*2;
+        int as1, bs1;
+        as1 = 500 - a*2;
+        bs1 = 1000 - (a+b)*4;
+        if(as+bs >= as1+bs1)
+        {
+            cout << as+bs;
+        }
+        else
+        {
+            cout << as1+bs1;
+        }
+        cout << "\n";
+    }
+	return(0);
+}
