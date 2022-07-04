@@ -1,0 +1,26 @@
+class Solution{
+    public:
+    // arr: input array
+    // n: size of array
+    //Function to find the sum of contiguous subarray with maximum sum.
+    long long maxSubarraySum(int arr[], int n){
+        long long int sum = 0;
+        long long int tsum = 0;
+        for(int i=0;i<n;i++){
+            tsum += arr[i];
+            if(sum < tsum)
+            {
+                sum = tsum;
+            }
+            if(tsum < 0)
+            {
+                tsum = 0;
+            }
+        }
+        if(sum == 0)
+        {
+            return (*max_element(arr, arr+n));
+        }
+        return(sum);
+    }
+};
