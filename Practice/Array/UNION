@@ -1,0 +1,19 @@
+class Solution{
+    public:
+    //Function to return the count of number of elements in union of two arrays.
+    int doUnion(int a[], int n, int b[], int m)  {
+        //int res[max(n, m)];
+        int i=0, j=0;
+        set<int> res;
+        for(i=0;i<n;i++)
+        {
+           res.insert(a[i]);
+        }
+        
+        for(j=0;j<m;j++)
+        {
+            res.insert(b[j]);
+        }
+        return(res.size());
+    }
+};
