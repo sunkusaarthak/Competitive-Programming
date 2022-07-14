@@ -1,0 +1,27 @@
+//https://practice.geeksforgeeks.org/problems/majority-element-1587115620/1#
+class Solution{
+  public:
+    // Function to find majority element in the array
+    // a: input array
+    // size: size of input array
+    int majorityElement(int a[], int size)
+    {
+        int f = size/2;
+        int val;
+        unordered_map<int, int> vi;
+        unordered_map<int, int> s;
+        for(int i=0;i<size;i++)
+        {
+            s[a[i]]++;
+        }
+        for(int i=0;i<size;i++)
+        {
+            if(s.find(a[i])->second > f)
+            {
+               return(a[i]);
+            }
+        }
+        return(-1);
+        
+    }
+};
