@@ -1,0 +1,107 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+void printVector(vector<int> arr) {
+  int n = arr.size();
+  //cout << "Vector:  " << "\n";
+  for(int i=0;i<n;i++) {
+    cout << arr[i] << " ";
+  }
+}
+
+void vectorFun(vector<int> arr) {
+  cout << "Vector is Empty: " << arr.empty() << "\n";
+  arr.push_back(10);
+  arr.push_back(20);
+  arr.push_back(30);
+  cout << arr.size() << " \n";
+  cout << arr.capacity() << "\n";
+  cout << "Vector is Empty: " << arr.empty() << "\n";
+}
+
+void vectorInit(int n) {
+  vector<int> arr(n, -1);
+  printVector(arr);
+}
+
+int findUnique(vector<int> arr) {
+  int res = 0, n = arr.size();
+  for(int i=0;i<n;i++) {
+    res = res^arr[i];
+  }
+  return(res);
+}
+
+bool findPairSum(vector<int> a1, int sum) {
+  int n = a1.size();
+  for(int i=0;i<n;i++) {
+    for(int j=i+1;j<n;j++) {
+      if(a1[i]+a1[j] == sum) {
+        return(true);
+      }
+    }
+  }
+  return(false);
+}
+
+bool tripletSum(vector<int> arr, int sum) {
+  int n = arr.size();
+  for(int i=0;i<n;i++) {
+    for(int j=i+1;j<n;j++) {
+      for(int k=j+1;k<n;k++) {
+        if(arr[i] + arr[j] + arr[k] == sum) {
+          return(true);
+        }
+      }
+    }
+  }
+  return(false);
+}
+
+bool fourSum(vector<int> arr, int sum) {
+  int n = arr.size();
+  for(int i=0;i<n;i++) {
+    for(int j=i+1;j<n;j++) {
+      for(int k=j+1;k<n;k++) {
+        for(int l=k+1;l<n;l++) {
+          if(arr[i] + arr[j] + arr[k] + arr[l] == sum) {
+            return(true);
+          }
+        }
+      }
+    }
+  }
+  return(false);
+}
+
+void sort01(vector<int> arr) {
+  int n = arr.size();
+  int s=0, e=n-1, i=0;
+  while(s<e) {
+    if(arr[s] == 0) {
+      s++;
+    }
+    else {
+      swap(arr[s], arr[e]);
+      e--;
+    }
+  }
+  printVector(arr);
+}
+
+int main() {
+  vector<int> arr, a1;
+  vectorFun(arr);
+  vectorInit(10);
+  cout << "\n" << (10^3^10) << "\n";
+  arr = {10, 2, 20, 20, 10};
+  a1 = {0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1};
+  cout << "Unique Value is: " << findUnique(arr) << "\n";
+  cout << "Pair Sum: " << findPairSum(arr, 12) << "\n";
+  cout << "Triplet Sum: " << tripletSum(arr, 50) << "\n";
+  cout << "Four Sum: " << fourSum(arr, 60) << "\n";
+  cout << "Sort 0's and 1's: ";
+  sort01(a1);cout << "\n";
+  return 0;
+}
