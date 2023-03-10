@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int arr[] = {10, 2, 5, 7, 8, 120};
+  cout << arr << "\n";
+  cout << &arr << "\n";
+  cout << &arr[0] << "\n";
+  cout << *arr << "\n";
+  cout << *arr + 1 << "\n";
+  cout << *(arr + 1) << "\n";
+  cout << arr[1] << "\n";
+  cout << 1[arr] << "\n";
+  cout << *(2+arr) << "\n";
+  cout << sizeof(arr) << "\n";
+
+  int *p = arr + 2;
+  cout << p << "\n";
+  cout << sizeof(p) << "\n";
+
+  char ch[8] = {'s', 'a', 'a', 'r', 't', 'h', 'a', 'k'};
+  char *c = ch;
+  cout << ch << "\n";
+  cout << c << "\n";
+
+  char k = 'k';
+  char *kptr = &k;
+  cout << *kptr << "\n";
+  return 0;
+}
